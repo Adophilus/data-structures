@@ -32,15 +32,14 @@ class Queue (object):
     def length (self) -> int:
         return self.__length
 
-    def enqueue (self, data) -> None:
+    def enqueue(self, data) -> None:
         node = Queue.Node(data)
         if not self.__front:
             self.__front = node
-            self.__end = node
         else:
             node.prev = self.__end
             self.__end.next = node
-            self.__end = node
+        self.__end = node
         self.__length += 1
 
     def dequeue (self):

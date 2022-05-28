@@ -74,7 +74,7 @@ class LinkedList (object):
         self.length += 1
         return self
 
-    def insert (self, index, data):
+    def insert(self, index, data):
         if (index > self.length or index < 0):
             raise LinkedList.OutOfBoundsError(index)
         self.length += 1
@@ -92,7 +92,7 @@ class LinkedList (object):
         while (i < index):
             node = node.next
             i += 1
-        if (node == None):
+        if node is None:
             return self.push(data)
         node.prev.next = new_node
         new_node.prev = node.prev
